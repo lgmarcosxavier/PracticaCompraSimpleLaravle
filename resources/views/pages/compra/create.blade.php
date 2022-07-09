@@ -4,6 +4,7 @@
     <h2>FORMULARIO COMPRA</h2>
 
     <form action="{{ route('compra.store') }}" method="post">
+        @csrf
         <div class="row">
             <div class="col-sm-4">
                 <label class="form-label" for="select-tipo-compra">Seleccione tipo compra:</label>
@@ -25,7 +26,7 @@
                 <label class="form-label" for="input-dias-credito">Días crédito: (si aplica)</label>
                 <input class="form-control"
                     type="number"
-                    name="no_factura"
+                    name="dias_credito"
                     id="input-dias-credito"
                     placeholder="Días de credito"
                     min="0"
@@ -145,7 +146,7 @@
             </table>
         </div>
         <br />
-        <input type="text" name="lista_detalle" id="input-lista-detalle">
+        <input type="hidden" name="lista_detalle" id="input-lista-detalle">
         <br />
         <br />
         <div class="row">
