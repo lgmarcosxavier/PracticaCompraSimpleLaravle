@@ -63,6 +63,7 @@ class CompraController extends Controller
             $lista_detalles = json_decode($request->get('lista_detalle'), true);
 
             if(!is_countable($lista_detalles)){
+                DB::rollBack();
                 throw new Exception('No se pudo obtener la lista de detalles compra.');
             }
 
